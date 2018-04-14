@@ -4,21 +4,18 @@ var orm = require("../config/orm.js")
 //using burger specific input for the ORM.
 // Export at the end of the burger.js file.
 
+// selectAll: function (tablename, cb) {
+//     var queryString = "SELECT * FROM " +tablename
+//     connection.query(queryString, function (err, result) {
+//         if (err) throw err
+//         cb(result)
 
 var burger = {
-    // get --read db... display initial values from database in hbs files and render on browser
-        //router.get("route(/)", function(req/res){
-            //burger.functionName(data){
-                //set var to use in handlebars... probs obj of data
-            
-            //console.log(var)--see if setting correctly
-            //res.render("hbs file(index) to render in main.hbds",vars to be rendered )
-            //}
-        //})
-    // post -- create
-    //put -- update
-    //delete -- delete
-    
+    selectAll: function (cb) {
+        orm.selectAll("burgers", function(res){
+            cb(res)
+        })
+    }
 
 }
 

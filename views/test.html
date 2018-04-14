@@ -1,4 +1,15 @@
-<h1>Eat Me</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Eat Me</h1>
     {{!-- put a burger image here --}} {{!-- burger input form --}}
     <h2>What burger are you in the mood for? </h2>
     <form class="create-form" id="addBurger">
@@ -13,7 +24,7 @@
     <ul>
         {{#each burgers}} {{#unless devoured}}
         <li>
-            {{id}}. {{burger_name}}
+            {{id}}. {{burger}}
             <button class="eat" data-id="{{id}}" data-devoured="{{devoured}}">
                 EAT ME </button>
         </li>{{/unless}} {{/each}}
@@ -24,7 +35,16 @@
     <ul>
         {{#each burgers}} {{#if devoured}}
         <li>
-           {{id}}. {{burger_name}}
+           {{id}}. {{burger}}
         </li>
         {{/if}} {{/each}}
     </ul>
+
+
+
+
+
+
+</body>
+
+</html>
