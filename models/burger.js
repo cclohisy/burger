@@ -11,12 +11,20 @@ var orm = require("../config/orm.js")
 //         cb(result)
 
 var burger = {
+    //why do i not need to pass tableName back through... but do need to pass cb...
+    //think its becuase table being used is not changing...
     selectAll: function (cb) {
-        orm.selectAll("burgers", function(res){
+        orm.selectAll("burgers", function (res) {
             cb(res)
         })
-    }
-
+    },
+    // insertOne: function(tablename, colnames, values,cb){
+    // var queryString = "INSERT INTO "+ tablename + " ("+colnames+") "+"VALUE "+values
+ insertOne: function(colnames,values,cb){
+     orm.insertOne("burgers", colnames,values, function(res){
+         cb(res)
+     })
+ }
 }
 
 module.exports = burger

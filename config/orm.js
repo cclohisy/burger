@@ -7,16 +7,26 @@ var connection = require("./connection.js")
 
 var orm = {
     //function (query, requirments, for, querystring ?'s, callback function){ }
+
+    //function to display all burgers and devoured status from db when page is loaded
     // selectAll()
     selectAll: function (tablename, cb) {
-        var queryString = "SELECT * FROM " +tablename
+        var queryString = "SELECT * FROM " + tablename
         connection.query(queryString, function (err, result) {
             if (err) throw err
             cb(result)
         })
-    }
-
+    },
+    //function to add a burger 
     // insertOne()
+    insertOne: function (tablename, colnames, values, cb) {
+        var queryString = "INSERT INTO " + tablename + " (" + colnames + ") " + "VALUES (" + values + ") "
+        console.log(queryString)
+        connection.query(queryString, values, function (err, result) {
+            if (err) throw err
+            cb(result)
+        })
+    }
     // updateOne()
 
 

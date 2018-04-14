@@ -19,17 +19,21 @@ router.get("/", function (req, res) {
         //console.log(var)--see if setting correctly- logs in terminal
         console.log(burgerObj)
         //res.render("hbs file(index) to render in main.hbds",vars to be rendered )
-        res.render("index",burgerObj)
+        res.render("index", burgerObj)
 
     })
 
 })
 
-
-//}
-//})
-
-// post -- create
+// post -- create: add new burger to db, refresh page and display
+router.post("/api/burgers", function (req, res) {
+    console.log(req.body)//in terminal
+    //insert [col name, col name], [value col 1, val col 2],
+    burger.insertOne(["burger_name", "devoured"],
+        [JSON.stringify(req.body.burger), req.body.devoured],
+        function (result) {
+        })
+})
 //put -- update
 //delete -- delete
 
