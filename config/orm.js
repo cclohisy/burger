@@ -26,8 +26,17 @@ var orm = {
             if (err) throw err
             cb(result)
         })
-    }
+    },
     // updateOne()
+    //need object input that holds {colname1: value1 , colname2: value2}.. this case {burger_name: cheese, devoured:true/false}
+    updateOne: function (tablename, inputObj, condition, cb) {
+        var queryString = "UPDATE " + tablename + " SET " + inputObj + " WHERE " + condition
+        console.log(queryString)
+        connection.query(queryString, function (err, result) {
+            if (err) throw err
+            cb(result)
+        })
+    }
 
 
 

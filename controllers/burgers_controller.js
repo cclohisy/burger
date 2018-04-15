@@ -35,7 +35,34 @@ router.post("/api/burgers", function (req, res) {
         })
 })
 //put -- update
-//delete -- delete
+
+router.put("/api/burgers/:id", function (req, res) {
+    //need object input that holds {colname1: value1 , colname2: value2}.. this case {burger_name: cheese, devoured:true/false}
+    //var queryString = "UPDATE "+tablename+" SET "+inputObj+" WHERE "+condition
+    //  updateOne: function(inputObj, condition, cb){
+    //     orm.updateOne("burgers", inputObj, condition, function(res){
+    //         cb(res)
+    var id = req.params.id
+    console.log("id to update" + id)
+    var condition = "id = " + id
+    console.log(condition)
+
+    var inputObj = "devoured =" + req.body.devoured
+    console.log(inputObj)
+
+    burger.updateOne(inputObj, condition, function (result) {
+            console.log(result)
+            //check that id was found and row was actually changed... otherwise'not found' error
+            if (result.changedRows == 0) {
+                return res.status(404).end();
+              } else {
+                  //updte was successful! return success code
+                res.status(200).end();
+              }
+        }
+    )
+})
+//delete -- delete ... not required
 
 
 

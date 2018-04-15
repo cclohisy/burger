@@ -24,7 +24,15 @@ var burger = {
      orm.insertOne("burgers", colnames,values, function(res){
          cb(res)
      })
- }
+ },
+     //need object input that holds {colname1: value1 , colname2: value2}.. this case {burger_name: cheese, devoured:true/false}
+     //var queryString = "UPDATE "+tablename+" SET "+inputObj+" WHERE "+condition
+     updateOne: function(inputObj, condition, cb){
+         orm.updateOne("burgers", inputObj, condition, function(res){
+             cb(res)
+         })
+
+}
 }
 
 module.exports = burger
