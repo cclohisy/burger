@@ -19,7 +19,10 @@ label{
     font-size: 1.5em
 
 }
-
+.card-text{
+    font-family: 'Roboto Condensed', sans-serif;
+  
+}
 /* fonts */
 /* font-family: 'Luckiest Guy', cursive;
 font-family: 'Alegreya Sans SC', sans-serif;
