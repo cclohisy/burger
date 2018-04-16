@@ -1,24 +1,14 @@
 <div class="jumbotron jumbotron-fluid text-center">
     <h1 class="display-4">BURGER BINGE</h1>
-    <p class="lead">What burger are you in the mood for? </p>
+    <h2 >What burger are you in the mood for? </h2>
 
 </div>
 {{!--
 <img src="https://media.giphy.com/media/l0EtM8MnNvB5O6C1q/giphy.gif" class="img-fluid" alt="Burger Gif"> put a burger image here "https://media.giphy.com/media/4eBH2WQPLULLi/giphy.gif" burger input form --}}
-<form class="mx-auto text-center" id="addBurger">
-    <h2>Don't see anything you like? Add a burger! </h2>
-
-    <div class="form-group">
-        <label>Burger Choice:</label>
-        <input type="text" id="newBurger" name="burger">
-    </div>
-    <button class="btn" type="submit">Add Burger</button>
-</form>
-
 
 {{!-- 2 cards for results? --}}
 <div class="row">
-    <div class="card m-2">
+    <div class="card m-2 col-md-5">
         <div class="card-body">
             <h2 class="card-title">Time to Devour...</h2>
             {{#each burgers}}{{#unless devoured}}
@@ -30,7 +20,7 @@
         </div>
     </div>
 
-    <div class="card m-2">
+    <div class="card m-2 col-md-5">
         <div class="card-body">
             <h2 class="card-title">You at all these already!</h2>
             {{#each burgers}} {{#if devoured}}
@@ -42,3 +32,15 @@
         </div>
     </div>
 </div>
+{{!-- add a burger form --}}
+<form class="mx-auto text-center" id="addBurger">
+    <h2>Don't see anything you like? Add a burger! </h2>
+
+    <div class="form-group">
+        <label>Burger Choice:</label>
+        <input type="text" id="newBurger" name="burger">
+    </div>
+    <button class="btn" type="submit">Add Burger</button>
+</form>
+
+
