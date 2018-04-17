@@ -13,9 +13,19 @@ $(function () {
         console.log(newBurger)//in browser
 
         //send post request to add newBurger data to db
-        $.post("/api/burgers", newBurger, function (data) {
-            location.reload()
-        })
+        // $.post("/api/burgers", newBurger,
+        //     function () {
+        //         location.reload()
+        //     })
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+        }).then(
+            function () {
+                //this isnt working and i dont know why!!!!!! :( 
+                console.log("got here...")
+                location.reload()
+            })
 
     })//closes add burger
 
@@ -36,7 +46,8 @@ $(function () {
             {
                 type: "PUT",
                 data: newState
-            }).then(function(){
+            }).then(function () {
+
                 location.reload()
             })
 

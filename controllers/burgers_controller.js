@@ -32,6 +32,7 @@ router.post("/api/burgers", function (req, res) {
     burger.insertOne(["burger_name", "devoured"],
         [JSON.stringify(req.body.burger), req.body.devoured],
         function (result) {
+            res.render("index", result)
         })
 })
 //put -- update
@@ -49,7 +50,7 @@ router.put("/api/burgers/:id", function (req, res) {
 
     var inputObj = "devoured =" + req.body.devoured
     console.log(inputObj)
-
+//{devoured: req.body.devoured}
     burger.updateOne(inputObj, condition, function (result) {
             console.log(result)
             //check that id was found and row was actually changed... otherwise'not found' error
