@@ -32,7 +32,7 @@ router.post("/api/burgers", function (req, res) {
     burger.insertOne(["burger_name", "devoured"],
         [JSON.stringify(req.body.burger), req.body.devoured],
         function (result) {
-            res.render("index", result)
+            res.end()
         })
 })
 //put -- update

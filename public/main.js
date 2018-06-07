@@ -17,15 +17,16 @@ $(function () {
         //     function () {
         //         location.reload()
         //     })
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: newBurger
-        }).then(
-            function () {
-                //this isnt working and i dont know why!!!!!! :( 
-                console.log("got here...")
-                location.reload()
-            })
+        $.ajax("/api/burgers",
+            {
+                type: "POST",
+                data: newBurger
+            }
+        ).then(function () {
+            //this isnt working and i dont know why!!!!!! :( 
+            //console.log("got here... tryna do stuff")
+            location.reload()
+        })
 
     })//closes add burger
 
@@ -46,10 +47,11 @@ $(function () {
             {
                 type: "PUT",
                 data: newState
-            }).then(function () {
-
-                location.reload()
-            })
+            }
+        ).then(function () {
+            //console.log("eating burgers")
+            location.reload()
+        })
 
     })
 
