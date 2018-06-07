@@ -7,7 +7,7 @@ This restaurant app lets users input the names of burgers they would like to eat
 All you need is a web browser! 
 
 ### Live Link
-[Burger Bing](https://burger-binge.herokuapp.com/)
+[Burger Binge](https://burger-binge.herokuapp.com/)
 
 ### Functionality
 This app uses a homemade ORM and follows the MVC design pattern. Node and MySQL are used to query and route data flow in the app.
