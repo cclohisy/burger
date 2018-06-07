@@ -13,9 +13,9 @@ All you need is a web browser!
 This app uses a homemade ORM and follows the MVC design pattern. Node and MySQL are used to query and route data flow in the app.
 
 #### CRUD Operations:
-*READ all burgers from the MySQL database and display them on the DOM using Handlebars.
-*UPDATE a specific burger by clicking Eat Me. This changes the "devoured" state of the burger in the database and re-display burger in appropriate area of page using Handlebars. 
-*CREATE a new burger using the "Add a Burger" option. This operation adds a new burger to the database and displays it in the "Time to Devour" area of the page using Handlebars.
+* READ all burgers from the MySQL database and display them on the DOM using Handlebars.
+* UPDATE a specific burger by clicking Eat Me. This changes the "devoured" state of the burger in the database and re-display burger in appropriate area of page using Handlebars. 
+* CREATE a new burger using the "Add a Burger" option. This operation adds a new burger to the database and displays it in the "Time to Devour" area of the page using Handlebars.
 
 ### Built With
 * Node.js
